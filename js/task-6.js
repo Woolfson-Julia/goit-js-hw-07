@@ -22,18 +22,20 @@ const createBoxes = (amount) => {
       newDiv.style.height = `${sizeDiv}px`;
       divBoxes.append(newDiv);
     }
+    
     inputEl.value = '';
   }
 };
+const onCreate = () => {
+const numBoxes = Number(inputEl.value);
+  createBoxes(numBoxes);
+}
 
-const destroyBoxes = () => {
+const onDestroy = () => {
   divBoxes.innerHTML = '';
 }
 
-btnCreate.addEventListener("click", () => {
-  const numBoxes = Number(inputEl.value);
-  createBoxes(numBoxes);
-});
+btnCreate.addEventListener("click", onCreate);
 
-btnDestroy.addEventListener("click", destroyBoxes);
+btnDestroy.addEventListener("click", onDestroy);
 
